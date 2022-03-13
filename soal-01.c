@@ -31,7 +31,7 @@ typedef struct {
 	float distance;
 	float finalFuel;
 } data;
- 
+
 //deklarasi fungsi
 float power(float x, int y);
 float squareRoot(float x);
@@ -39,6 +39,7 @@ void processOutput (data person);
 void calculateFuelUsed (data *person);
 void calculateDistance (data *person);
 data loadFile(char filename[MAX_STRLEN]);
+void printOneEntry(data entry);
 
 int main(){ 
 	//inisialisasi variabel dan struct
@@ -57,20 +58,15 @@ int main(){
 			printf("\n");
 			break;
 		}
-		 
-		//lengkapi ... untuk kondisi file tidak tersedia
-		if ( ... ){
+		
+		FILE* fp = fopen(filename, "r");
+		if (fp == NULL){
 			printf("File tidak tersedia, silahkan coba lagi\n");
 			continue;
 		} 
 
-		//menambah alokasi data dari array data_tentara 
 		data_tentara = realloc(data_tentara, (index+1) * sizeof *data_tentara);
-
-		//memanggil fungsi loadFile untuk memasukkan informasi file.csv ke data_tentara[index]
 		data_tentara[index] = loadFile(filename);
-
-		//inkrementasi indeks
 		index++; 
 	}
 	
@@ -82,29 +78,8 @@ int main(){
 	} 
 }
 
-//menerima input berupa pointer ke variabel bertipe 'data'
-//bertugas untuk menghitung bahan bakar yang digunakan
-void calculateFuelUsed (data *person){
-	/*
-		lengkapi fungsi agar dapat menghitung bahan bakar yang digunakan
-		dan memasukkannya ke person.finalFuel
-	*/
-   return;
-}
-
-//menerima input berupa pointer ke variabel bertipe 'data'
-//bertugas untuk menghitung jarak total yang ditempuh
-void calculateDistance (data *person){    
-	/*
-		lengkapi fungsi agar dapat menghitung total jarak tempuh
-		dan memasukkannya ke person.distance 
-	*/
-	 
-	return;
-}
-
 //menerima input berupa variabel bertipe 'data'
-//bertugas untuk menampilkan output ke pengguna 
+//bertugas untuk menampilkan output ke pengguna
 void processOutput (data person){ 
 	if (person.finalFuel >= 0){
 		printf("Prajurit %s\nBahan bakar awal: %.2f\nKonsumsi bahan bakar: %.2f km/liter\n", person.name, person.fuel, person.kml);
@@ -114,6 +89,44 @@ void processOutput (data person){
 		printf("Prajurit %s\nBahan bakar awal: %.2f\nKonsumsi bahan bakar: %.2f km/liter\n",person.name, person.fuel, person.kml);
 		printf("Jarak tempuh: %.2f km\nBahan bakar tidak cukup, tambah sebanyak %.2f liter\n\n", person.distance, (-1*person.finalFuel));
 	}
+}
+
+//menerima input berupa pointer ke variabel bertipe 'data'
+//bertugas untuk menghitung bahan bakar yang digunakan
+void calculateFuelUsed (data *person){
+	person->finalFuel = (person->fuel) - (person->distance / person->kml); 
+	return;
+}
+
+//menerima input berupa pointer ke variabel bertipe 'data'
+//bertugas untuk menghitung jarak total yang ditempuh
+void calculateDistance (data *person){ 
+	float sum = 0;
+	float distance = 0;
+
+	for (int i = 0; i <= (person->coordinateCount); i++){
+		//kondisi awal, berangkat dari titik awal {0,0,0} ke titik {x1,y1,z1}
+		if (i == 0){
+			distance = power(person->x[i] - 0,2) + power(person->y[i] - 0,2) + power(person->z[i] - 0,2);
+		}
+
+		//kondisi akhir, pulang dari titik {x(n-1), y(n-1), z(n-1)} ke titik akhir {0,0,0}
+		else if (i == person->coordinateCount){
+			distance = power(0 - person->x[i-1],2) + power(0 - person->y[i-1],2) + power(0 - person->z[i-1],2);
+		}
+
+		//kalkulasi jarak titik a(n) dengan titik a(n-1)
+		else{
+			distance = power(person->x[i] - person->x[i-1],2) + power(person->y[i] - person->y[i-1],2) + power(person->z[i] - person->z[i-1],2);
+		}
+		
+		distance = squareRoot(distance );       //akar pangkat 
+		sum = sum + distance;                   //sumasi value
+	}
+
+	//ubah nilai variabel distance pada struct person menjadi nilai sum
+	person->distance = sum; 
+	return;
 }
 
 //menerima input berupa nama file
@@ -180,8 +193,6 @@ data loadFile(char filename[MAX_STRLEN]){
 	//memasukkan jumlah koordinat yang dibaca ke variabel coordinateCount didalam struct data_orang
 	data_orang.coordinateCount = loopKoordinat;
 	
-	return data_orang; 
-
 	return data_orang; 
 }
 
