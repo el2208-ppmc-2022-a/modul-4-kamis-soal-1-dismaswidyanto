@@ -5,7 +5,7 @@
       "setup": "make soal-01",
       "run": "./soal-01",
       "input": "data1.csv\r\ndata2.csv\r\nexit",
-      "output": "Prajurit Eren Iyenga\r\nBahan bakar awal: 37.50\r\nKonsumsi bahan bakar: 2.40 km/liter\r\nJarak tempuh: 34.11 km\r\nSisa bahan bakar: 23.29 liter      \r\n\r\nPrajurit Oleksandr Kostyliev\r\nBahan bakar awal: 11.20\r\nKonsumsi bahan bakar: 1.65 km/liter\r\nJarak tempuh: 87.74 km\r\nBahan bakar tidak cukup, tambah sebanyak 41.98 liter",
+      "output": "Prajurit Eren Iyenga\r\nBahan bakar awal: 37.50\r\nKonsumsi bahan bakar: 2.40 km/liter\r\nJarak tempuh: 34.11 km\r\nSisa bahan bakar: 23.29 liter\r\n\r\nPrajurit Oleksandr Kostyliev\r\nBahan bakar awal: 11.20\r\nKonsumsi bahan bakar: 1.65 km/liter\r\nJarak tempuh: 87.74 km\r\nBahan bakar tidak cukup, tambah sebanyak 41.98 liter",
       "comparison": "included",
       "timeout": 1,
       "points": 10
