@@ -1,0 +1,104 @@
+{
+  "tests": [
+    {
+      "name": "1",
+      "setup": "make soal-01",
+      "run": "./soal-01",
+      "input": "data1.csv\r\ndata2.csv\r\nexit",
+      "output": "Prajurit Eren Iyenga\r\nBahan bakar awal: 37.50\r\nKonsumsi bahan bakar: 2.40 km/liter\r\nJarak tempuh: 34.11 km\r\nSisa bahan bakar: 23.29 liter      \r\n\r\nPrajurit Oleksandr Kostyliev\r\nBahan bakar awal: 11.20\r\nKonsumsi bahan bakar: 1.65 km/liter\r\nJarak tempuh: 87.74 km\r\nBahan bakar tidak cukup, tambah sebanyak 41.98 liter",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "2",
+      "setup": "make soal-01",
+      "run": "./soal-01",
+      "input": "data2.csv\r\ndata3.csv\r\nexit",
+      "output": "Prajurit Oleksandr Kostyliev\r\nBahan bakar awal: 11.20\r\nKonsumsi bahan bakar: 1.65 km/liter\r\nJarak tempuh: 87.74 km\r\nBahan bakar tidak cukup, tambah sebanyak 41.98 liter\r\n\r\nPrajurit Gaben\r\nBahan bakar awal: 32.20\r\nKonsumsi bahan bakar: 2.63 km/liter\r\nJarak tempuh: 66.11 km\r\nSisa bahan bakar: 7.06 liter",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "3",
+      "setup": "make soal-01",
+      "run": "./soal-01",
+      "input": "data4.csv\r\nexit",
+      "output": "Prajurit Valerii Vakhovskyi\r\nBahan bakar awal: 25.24\r\nKonsumsi bahan bakar: 3.55 km/liter\r\nJarak tempuh: 121.17 km\r\nBahan bakar tidak cukup, tambah sebanyak 8.89 liter",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "4",
+      "setup": "make soal-01",
+      "run": "./soal-01",
+      "input": "data1.csv\r\ndata5.csv\r\nexit",
+      "output": "Prajurit Eren Iyenga\r\nBahan bakar awal: 37.50\r\nKonsumsi bahan bakar: 2.40 km/liter\r\nJarak tempuh: 34.11 km\r\nSisa bahan bakar: 23.29 liter\r\n\r\nPrajurit Zelenskyy\r\nBahan bakar awal: 11.10\r\nKonsumsi bahan bakar: 3.11 km/liter\r\nJarak tempuh: 57.34 km\r\nBahan bakar tidak cukup, tambah sebanyak 7.34 liter",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "5",
+      "setup": "make soal-01",
+      "run": "./soal-01",
+      "input": "data2.csv\r\ndata4.csv\r\ndata5.csv\r\nexit",
+      "output": "Prajurit Oleksandr Kostyliev\r\nBahan bakar awal: 11.20\r\nKonsumsi bahan bakar: 1.65 km/liter\r\nJarak tempuh: 87.74 km\r\nBahan bakar tidak cukup, tambah sebanyak 41.98 liter\r\n\r\nPrajurit Valerii Vakhovskyi\r\nBahan bakar awal: 25.24\r\nKonsumsi bahan bakar: 3.55 km/liter\r\nJarak tempuh: 121.17 km\r\nBahan bakar tidak cukup, tambah sebanyak 8.89 liter\r\n\r\nPrajurit Zelenskyy\r\nBahan bakar awal: 11.10\r\nKonsumsi bahan bakar: 3.11 km/liter\r\nJarak tempuh: 57.34 km\r\nBahan bakar tidak cukup, tambah sebanyak 7.34 liter",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "6",
+      "setup": "make soal-01",
+      "run": "./soal-01",
+      "input": "data6.csv\r\ndata7.csv\r\nexit",
+      "output": "Prajurit Matthew Judge\r\nBahan bakar awal: 21.30\r\nKonsumsi bahan bakar: 5.41 km/liter\r\nJarak tempuh: 65.13 km\r\nSisa bahan bakar: 9.26 liter\r\n\r\nPrajurit Bob Ross\r\nBahan bakar awal: 8.31\r\nKonsumsi bahan bakar: 13.11 km/liter\r\nJarak tempuh: 137.62 km\r\nBahan bakar tidak cukup, tambah sebanyak 2.19 liter",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "7",
+      "setup": "make soal-01",
+      "run": "./soal-01",
+      "input": "data7.csv\r\ndata8.csv\r\nexit",
+      "output": "Prajurit Bob Ross\r\nBahan bakar awal: 8.31\r\nKonsumsi bahan bakar: 13.11 km/liter\r\nJarak tempuh: 137.62 km\r\nBahan bakar tidak cukup, tambah sebanyak 2.19 liter\r\n\r\nPrajurit Berturtle Hooves\r\nBahan bakar awal: 23.40\r\nKonsumsi bahan bakar: 6.56 km/liter\r\nJarak tempuh: 70.60 km\r\nSisa bahan bakar: 12.64 liter",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "8",
+      "setup": "make soal-01",
+      "run": "./soal-01",
+      "input": "data1.csv\r\ndataPalsu.csv\r\ndata2.csv\r\nexit",
+      "output": "Prajurit Eren Iyenga\r\nBahan bakar awal: 37.50\r\nKonsumsi bahan bakar: 2.40 km/liter\r\nJarak tempuh: 34.11 km\r\nSisa bahan bakar: 23.29 liter\r\n\r\nPrajurit Oleksandr Kostyliev\r\nBahan bakar awal: 11.20\r\nKonsumsi bahan bakar: 1.65 km/liter\r\nJarak tempuh: 87.74 km\r\nBahan bakar tidak cukup, tambah sebanyak 41.98 liter",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "9",
+      "setup": "make soal-01",
+      "run": "./soal-01",
+      "input": "data5.csv\r\ndata6.csv\r\ndata7.csv\r\nexit",
+      "output": "Prajurit Zelenskyy\r\nBahan bakar awal: 11.10\r\nKonsumsi bahan bakar: 3.11 km/liter\r\nJarak tempuh: 57.34 km\r\nBahan bakar tidak cukup, tambah sebanyak 7.34 liter\r\n\r\nPrajurit Matthew Judge\r\nBahan bakar awal: 21.30\r\nKonsumsi bahan bakar: 5.41 km/liter\r\nJarak tempuh: 65.13 km\r\nSisa bahan bakar: 9.26 liter\r\n\r\nPrajurit Bob Ross\r\nBahan bakar awal: 8.31\r\nKonsumsi bahan bakar: 13.11 km/liter\r\nJarak tempuh: 137.62 km\r\nBahan bakar tidak cukup, tambah sebanyak 2.19 liter",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    },
+    {
+      "name": "10",
+      "setup": "make soal-01",
+      "run": "./soal-01",
+      "input": "data8.csv\r\nexit",
+      "output": "Prajurit Berturtle Hooves\r\nBahan bakar awal: 23.40\r\nKonsumsi bahan bakar: 6.56 km/liter\r\nJarak tempuh: 70.60 km\r\nSisa bahan bakar: 12.64 liter",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 10
+    }
+  ]
+}
